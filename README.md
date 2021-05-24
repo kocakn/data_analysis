@@ -30,3 +30,13 @@
     * [Видео: метрики ML сервиса](https://youtu.be/XYiC9tgnebk)
     * [Видео: Docker для ML сервиса](https://youtu.be/K37RlsZhH8s)
     * [Видео: рекомендательные системы]( https://youtu.be/PwIYGIfwvWo)
+
+Сборка контейнера для работы Flask:
+```shell
+docker build --no-cache . -f Dockerfile -t flask-app
+```
+
+Запуск контейнера для взаимодействия с сервисом с помощью Flask:
+```shell
+docker run -it --rm -v $(pwd)/data:/www/data -p 5000:5000 -d flask-app start_service
+```
